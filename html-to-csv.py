@@ -48,14 +48,13 @@ output_file = f"html-to-csv-{timestamp}.csv"
 with open(output_file, 'w', newline='') as f:
     writer = csv.writer(f)
     # Write header row
-    writer.writerow(["IP Address", "MAC Address", "Alternate TFTP", "Alternate TFTP Address", "TFTP Server 1", "TFTP Server 2"])
+    writer.writerow(["IP Address", "MAC Address", "Alternate TFTP", "TFTP Server 1", "TFTP Server 2"])
     # Write data rows
     for file_name, data in results.items():
         writer.writerow([
             data.get("ip address", ""), 
             data.get("mac address", ""), 
-            data.get("alternate tftp", ""), 
-            data.get("alternate tftp address", ""), 
-            data.get("tftp server 1", ""), 
-            data.get("tftp server 2", "")
+            data.get("alternate tftp", ""),
+            data.get("tftp server 1", None), 
+            data.get("tftp server 2", None)
         ])
