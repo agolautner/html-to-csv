@@ -39,8 +39,6 @@ for file_name in os.listdir(folder_path):
             # stripping the file extension for the files
             results[os.path.splitext(file_name)[0]] = result
 
-print(results)
-
 # Writing the results to a CSV file
 
 now = datetime.datetime.now()
